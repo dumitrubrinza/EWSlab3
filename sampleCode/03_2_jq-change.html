@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#lower").hide()
+    $("#string").change(upperCase)
+})
+
+function upperCase() {
+    $(this).val($(this).val().toUpperCase())
+    $(this).change(lowerCase)
+    $("#lower").show()
+    $("#upper").hide()
+ }
+
+function lowerCase() {
+    $(this).val($(this).val().toLowerCase())
+    $(this).change(upperCase)
+    $("#upper").show()
+    $("#lower").hide()
+}
+</script>
+</head>
+<body>
+    Enter a string: <input type="text" id="string">
+    <p id="upper">String will be upper-cased</p>
+    <p id="lower">String will be lower-cased</p>
+</body>

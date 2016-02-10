@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function upperCase() {
+    var element = document.getElementById("string")
+    element.removeEventListener('change',upperCase )
+    element.addEventListener('change',lowerCase , false)
+    element.value = element.value.toUpperCase()
+    document.getElementsByTagName('p')[0].innerHTML = 'String will be lower-cased'
+}
+
+function lowerCase() {
+	var element =  event.srcElement   // event object is globally available
+    element.removeEventListener('change', lowerCase)
+    element.addEventListener('change',upperCase , false)
+    element.value = element.value.toLowerCase()
+    document.getElementsByTagName('p')[0].innerHTML = 'String will be upper-cased'
+}
+</script>
+</head>
+<body>
+Enter a string: <input type="text" id="string" onchange="upperCase()">
+<p>String will be upper-cased</p>
+</body>
+

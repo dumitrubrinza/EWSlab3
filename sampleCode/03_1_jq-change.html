@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#string").change(function(){
+    	var input = $(this).val().toUpperCase()
+        $(this).val(input)
+  })
+})
+</script>
+</head>
+<body>
+    Enter a string: <input type="text" id="string">
+</body>
